@@ -60,7 +60,6 @@
 				<div class="col-md-12 text-center">
 					<p class="fh5co-social-icons">
 						<a href="https://www.instagram.com/dev.pajsen/?hl=en"><i class="icon-instagram"></i></a>
-                        
                         <a class="navbar-brand" href="index.html">Chaspians Train Photos</a>
 				</div>
 			</div>
@@ -68,79 +67,25 @@
 	</header>
 	<!-- END .header -->
 	
-	
 	<div id="fh5co-main">
 		<div class="container">
-
 			<div class="row">
-
-        <div id="fh5co-board" data-columns>
-
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/3.jpg" class="image-popup fh5co-board-img"><img src="images/3.jpg" alt="GreenCargo, Lund C"></a>
-        		</div>
-        		<div class="fh5co-desc">GreenCargo</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/2.jpg" class="image-popup fh5co-board-img"><img src="images/2.jpg" alt="Snälltåget, Lund C"></a>
-	        		<div class="fh5co-desc">Snälltåget</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/1.jpg" class="image-popup fh5co-board-img"><img src="images/1.jpg" alt="SJ X2000, Lund C"></a>
-	        		<div class="fh5co-desc">SJ, X2000</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/4.jpg" class="image-popup fh5co-board-img"><img src="images/4.jpg" alt="SJ X2000, Stockholm C"></a>
-	        		<div class="fh5co-desc">SJ, X2000</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/5.jpg" class="image-popup fh5co-board-img"><img src="images/5.jpg" alt="SJ Rc 1357, Stockholm C"></a>
-	        		<div class="fh5co-desc">SJ Rc 1357</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/8.jpg" class="image-popup fh5co-board-img"><img src="images/8.jpg" alt="SJ X2000, Eslöv Station"></a>
-	        		<div class="fh5co-desc">SJ, X2000</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/7.jpg" class="image-popup fh5co-board-img"><img src="images/7.jpg" alt="Skånetrafiken X61, Landskrona Station"></a>
-	        		<div class="fh5co-desc">Pågatåget, X61</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/6.jpg" class="image-popup fh5co-board-img"><img src="images/6.jpg" alt="SJ X2000, Stockholm C"></a>
-	        		<div class="fh5co-desc">SJ X2000</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/9.jpg" class="image-popup fh5co-board-img"><img src="images/9.jpg" alt="Skånetrafiken X61, Landskrona Station"></a>
-	        		<div class="fh5co-desc">Pågatåget, X61</div>
-        		</div>
-        	</div>
-        	<div class="item">
-        		<div class="animate-box">
-	        		<a href="images/10.jpg" class="image-popup fh5co-board-img"><img src="images/10.jpg" alt="Öresundståget X31K, Kävlinge Station"></a>
-	        		<div class="fh5co-desc">Öresundståget, X31K</div>
-        		</div>
-        	</div>
-        </div>
-        </div>
-       </div>
+				<div id="fh5co-board" data-columns>
+					<% trains.forEach((train, index) => { %>
+						<div class="item">
+							<div class="animate-box">
+								<a href="<%= train['image-location'] %>" class="image-popup fh5co-board-img">
+									<img src="<%= train['image-location'] %>" alt="<%= train.location %>">
+								</a>
+							</div>
+							<div class="fh5co-desc"><%= train.Description %></div>
+						</div>
+					<% }); %>
+				</div>
+			</div>
+		</div>
 	</div>
-
+	
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -159,7 +104,7 @@
 
 	<style>
 		body {
-			background-image: url("/images/bg3.jpg");
+			background-image: url("/images/bg5.jpg");
 			background-repeat: repeat-y;
 			background-size: contain;
 		}
